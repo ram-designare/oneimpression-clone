@@ -27,7 +27,7 @@ export const Stats = () => {
     </div>
   ))
   return (
-    <div className="grid lg:grid-cols-2 gap-x-24 mt-[200px] pb-20">
+    <div className="grid lg:grid-cols-2 gap-x-24 lg:mt-[200px] mt-32 pb-20">
       <div className="flex flex-col gap-4">
         <p className="text-2xl lg:text-5xl font-semibold">
           Manage influencer campaigns at scale with speed & seamlessness.

@@ -143,7 +143,7 @@ export const ContactForm: FC<ContactFormProps> = ({ closeForm }) => {
         <Button
           onClickFunction={handleSubmit}
           text="Request Callback"
-          bgColor="bg-black"
+          bgColor="bg-[#30B8C0] mx-auto"
           textColor="white"
         ></Button>
       </div>

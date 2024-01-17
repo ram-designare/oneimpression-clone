@@ -61,7 +61,7 @@ const Footer = () => {
   ];
   return (
     <div className="bg-[#1D252D]">
-      <div className="lg:container mx-auto py-24 lg:px-0 px-5">
+      <div className="lg:container mx-auto py-12 lg:py-24 lg:px-0 px-5">
         <div className="flex flex-col lg:items-center gap-8">
           <p className="text-4xl lg:text-7xl text-white font-semibold">
             Start a Campaign Now
@@ -79,9 +79,9 @@ const Footer = () => {
             onClickFunction={() =>
               setDialogState({ open: true, type: "form" })
             }
-            bgColor="bg-[#30B8C0]"
+            bgColor="bg-[#30B8C0] !py-4"
             text="Get Started"
-            textColor="white"
+            textColor="white text-sm lg:text-xl font-medium"
             width="200px"
           ></Button>
         </div>
@@ -90,7 +90,7 @@ const Footer = () => {
           {footerGridElements.map((each: any) => (
             <div className="flex flex-col" key={Math.random()}>
               <p className="text-[#747D84] text-sm">{each.title}</p>
-              <div className="flex flex-col gap-2 lg:gap-4 text-white">
+              <div className="flex flex-col gap-2 lg:gap-4 text-white text-xs md:text-normal lg:text-base">
                 {each.points.map((point: any) => (
                   <p key={point.name}>{point.name}</p>
                 ))}
