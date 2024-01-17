@@ -31,12 +31,12 @@ export const FormField: FC<FormFieldProps> = ({
     };
   }, [dropdownRef]);
 
-  const dropdownList = listElements?.map((each: any) => (
-    <option className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+  const dropdownList = listElements?.map((each: any, index: number) => (
+    <option key={index} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
       {each.name}
     </option>
   ));
-  
+
   return (
     <div className="flex items-center justify-between gap-4">
       <p className="w-1/4">{title}</p>

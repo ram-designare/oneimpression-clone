@@ -42,7 +42,7 @@ const Navbar = () => {
         </div>
         <div className="hidden lg:flex gap-10 items-center">
           <p className="relative">
-            We're hiring
+            We&apos;re hiring
             <img
               className="absolute w-4 -right-3 -top-1"
               src="/images/hiring.png"
@@ -74,7 +74,7 @@ const Navbar = () => {
           <div className="w-96 h-screen fixed top-0 right-0 bg-white navMenu">
             <div className="flex flex-col gap-2 pl-6 pt-12 relative">
               <p className="relative">
-                We're hiring
+                We&apos;re hiring
                 <img
                   className="absolute w-4 left-20 bottom-3"
                   src="/images/hiring.png"
