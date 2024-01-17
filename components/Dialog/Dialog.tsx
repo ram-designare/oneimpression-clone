@@ -53,8 +53,8 @@ export const Dialog: FC<DialogProps> = ({ children, closeDialog, isOpen }) => {
         <span className="relative">
           {children}
           <img
-            className="absolute top-2 right-6 w-4 border border-black rounded-full"
-            src="/images/xmark-solid.svg"
+            className="absolute top-4 right-6 w-8 cursor-pointer"
+            src="/images/close-form.svg"
             onClick={closeDialog}
           ></img>
         </span>

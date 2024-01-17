@@ -19,6 +19,13 @@ export const Stats = () => {
       desc: "Brands Who Trust Us",
     },
   ];
+
+  const ourStats = stats.map((each: any) => (
+    <div className="flex flex-col gap-2" key={each.desc}>
+      <p className="text-2xl lg:text-5xl font-semibold text-[#30C0B7]">{each.stat}</p>
+      <p className="text-sm lg:text-xl text-[#747D84]">{each.desc}</p>
+    </div>
+  ))
   return (
     <div className="grid lg:grid-cols-2 gap-x-24 mt-[200px] pb-20">
       <div className="flex flex-col gap-4">
@@ -32,12 +39,7 @@ export const Stats = () => {
         </p>
       </div>
       <div className="grid grid-cols-2 gap-y-10 gap-x-4 lg:mt-0 mt-8">
-        {stats.map((each: any) => (
-          <div className="flex flex-col gap-2" key={each.desc}>
-            <p className="text-2xl lg:text-5xl font-semibold text-[#30C0B7]">{each.stat}</p>
-            <p className="text-sm lg:text-xl text-[#747D84]">{each.desc}</p>
-          </div>
-        ))}
+        {ourStats}
       </div>
     </div>
   );

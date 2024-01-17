@@ -12,7 +12,6 @@ export const UserContext = createContext({});
 
 export default function App({ Component, pageProps }: AppProps) {
   const [dialogState, setDialogState] = useState({ open: false, type: "" });
-  // console.log(dialogState)
   return (
     <>
       <UserContext.Provider value={{ setDialogState, dialogState }}>

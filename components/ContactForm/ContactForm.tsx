@@ -73,29 +73,59 @@ export const ContactForm: FC<ContactFormProps> = ({ closeForm }) => {
       [prop]: e.target.value,
     });
   };
-  console.log(userDetails)
+  console.log(userDetails);
   return (
     <form
       onSubmit={handleSubmit}
       className="w-screen lg:w-[700px] h-screen mx-auto bg-white rounded-lg overflow-y-scroll"
     >
-      <div className="flex flex-col gap-6 px-5 py-6">
-        <div className="flex flex-col gap-2">
-          <img className="w-8" src="/images/phone.svg"></img>
-          <p>Schedule Demo</p>
-          <p>Get a campaign proposal within 24 hours</p>
+      <div className="flex flex-col gap-6 px-8 py-6">
+        <div className="flex flex-col gap-2 mb-8">
+          <img className="w-[36px]" src="/images/phone.svg"></img>
+          <p className="text-2xl font-bold">Schedule Demo</p>
+          <p className="text-xl font-normal">
+            Get a campaign proposal within 24 hours
+          </p>
         </div>
         <FormField
           title="Your Name"
           type="text"
+          placeholder="Enter Your Name"
           onChange={(e: any) => handleChange(e, "name")}
         />
-        <FormField title="Your Company Email" type="text" onChange={(e: any) => handleChange(e, "email")} />
-        <FormField title="Mobile No." type="phone" onChange={(e: any) => handleChange(e, "phone")}/>
-        <FormField title="You are:" type="dropdown" listElements={userTitle}  onChange={(e: any) => handleChange(e, "clientType")}/>
-        <FormField title="Agency Name" type="text"  onChange={(e: any) => handleChange(e, "agencyName")}/>
-        <FormField title="Provide Details" type="text"  onChange={(e: any) => handleChange(e, "details")}/>
         <FormField
+          title="Your Company Email"
+          placeholder="Enter Your Email"
+          type="text"
+          onChange={(e: any) => handleChange(e, "email")}
+        />
+        <FormField
+          title="Mobile No."
+          type="phone"
+          placeholder="Enter Your Phone"
+          onChange={(e: any) => handleChange(e, "phone")}
+        />
+        <FormField
+          title="You are:"
+          type="dropdown"
+          placeholder="Select"
+          listElements={userTitle}
+          onChange={(e: any) => handleChange(e, "clientType")}
+        />
+        <FormField
+          title="Agency Name"
+          type="text"
+          placeholder="Enter Agency Name"
+          onChange={(e: any) => handleChange(e, "agencyName")}
+        />
+        <FormField
+          title="Provide Details"
+          type="text"
+          placeholder="eg. enter details here"
+          onChange={(e: any) => handleChange(e, "details")}
+        />
+        <FormField
+          placeholder="Select Budget"
           title="Budget Option"
           type="dropdown"
           listElements={budgetOptions}
@@ -107,9 +137,7 @@ export const ContactForm: FC<ContactFormProps> = ({ closeForm }) => {
           </label>
 
           <p className="select-none text-sm md:text-base">
-            By proceeding to checkout, I agree to the House Rules and Refund
-            Policy and that Leisurely can charge my payment method if I’m
-            responsible for damage.
+          By proceeding, you hereby agree that you have read, acknowledged, understood, accepted and consented to the website’s <span className="font-medium text-[#30C0b7]">Privacy Policy</span> and <span className="font-medium text-[#30C0b7]">Terms of Service.</span>
           </p>
         </div>
         <Button

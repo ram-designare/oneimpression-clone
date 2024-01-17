@@ -2,9 +2,16 @@ import { Button } from "@/components/Button/Button";
 import React from "react";
 
 export const Join = () => {
+  const overlappingImages = [...Array(5)].map((e, i) => (
+    <img
+      key={i}
+      className={`w-16 lg:w-32 h-16 lg:h-32 lg:-ml-8 -mr-4 z-[${i}]`}
+      src="/images/team4.png"
+    ></img>
+  ))
   return (
     <div className="bg-gradient-to-r from-[#30c0b7] to-[#706df9]">
-      <div className="container mx-auto lg:px-0 px-5">
+      <div className="lg:container mx-auto lg:px-0 px-5">
         <div className="flex lg:flex-row flex-col-reverse lg:items-center justify-between py-12 lg:py-24">
           <div className="flex flex-col gap-6">
             <p className="text-base lg:text-2xl text-white">We're hiring 🎉</p>
@@ -20,13 +27,7 @@ export const Join = () => {
             ></Button>
           </div>
           <div className="flex lg:overflow-visible overflow-hidden lg:mb-0 mb-12">
-            {[...Array(5)].map((e, i) => (
-              <img
-                key={i}
-                className={`w-16 lg:w-32 h-16 lg:h-32 -ml-8 z-[${i}]`}
-                src="/images/team4.png"
-              ></img>
-            ))}
+            {overlappingImages}
           </div>
         </div>
       </div>

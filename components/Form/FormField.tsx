@@ -30,14 +30,21 @@ export const FormField: FC<FormFieldProps> = ({
       document.removeEventListener("mousedown", handleClickOutsideNavBar);
     };
   }, [dropdownRef]);
+
+  const dropdownList = listElements?.map((each: any) => (
+    <option className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+      {each.name}
+    </option>
+  ));
+  
   return (
-    <div className="flex justify-between gap-4">
-      <p className="w-[140px]">{title}</p>
+    <div className="flex items-center justify-between gap-4">
+      <p className="w-1/4">{title}</p>
       {type === "text" && (
         <input
           value={data}
           onChange={onChange}
-          className="w-full h-[50px] border rounded-md"
+          className="w-full h-[50px] border rounded-md  pl-4"
           placeholder={placeholder}
         ></input>
       )}
@@ -45,22 +52,19 @@ export const FormField: FC<FormFieldProps> = ({
         <>
           <div className="relative w-full">
             <input
-              className="w-full h-[50px] border rounded-md"
+              value={data}
+              className="w-full h-[50px] border rounded-md pl-4"
               placeholder={placeholder}
               onClick={() => setShowDropdown(true)}
             ></input>
             {showDropdown && (
               <select
-                className="absolute left-0 w-full py-3 bg-white border text-primary-50 outline-none"
+                className="absolute left-0 w-full py-3 bg-white border text-primary-50 outline-none pl-4"
                 name="budget"
                 onChange={onChange}
                 value={data}
               >
-                {listElements?.map((each: any) => (
-                  <option className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                    {each.name}
-                  </option>
-                ))}
+                {dropdownList}
               </select>
             )}
           </div>
@@ -69,7 +73,7 @@ export const FormField: FC<FormFieldProps> = ({
       {type === "phone" && (
         <input
           onChange={onChange}
-          className="w-full h-[50px] border rounded-md"
+          className="w-full h-[50px] border rounded-md pl-4"
           placeholder={placeholder}
         ></input>
       )}

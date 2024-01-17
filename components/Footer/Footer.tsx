@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button } from "../Button/Button";
+import { UserContext } from "@/pages/_app";
 
 const Footer = () => {
+
+  const { dialogState, setDialogState } = useContext<any>(UserContext);
+
   const footerPointers = [
     { point: "Lightning Fast Speed" },
     { point: "Best Creator Pricing" },
@@ -57,7 +61,7 @@ const Footer = () => {
   ];
   return (
     <div className="bg-[#1D252D]">
-      <div className="container mx-auto py-24 lg:px-0 px-5">
+      <div className="lg:container mx-auto py-24 lg:px-0 px-5">
         <div className="flex flex-col lg:items-center gap-8">
           <p className="text-4xl lg:text-7xl text-white font-semibold">
             Start a Campaign Now
@@ -72,6 +76,9 @@ const Footer = () => {
           </div>
 
           <Button
+            onClickFunction={() =>
+              setDialogState({ open: true, type: "form" })
+            }
             bgColor="bg-[#30B8C0]"
             text="Get Started"
             textColor="white"

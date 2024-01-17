@@ -83,22 +83,24 @@ export const Metrics = () => {
     },
   ];
 
+  const allMetricSections = metricsData.map((each: any) => (
+    <Metric
+      key={each.title}
+      flexDirection={each.flexDirection}
+      image={each.image}
+      content={each.content}
+      title={each.title}
+      type={each.type}
+      list={each.list}
+      newTag={each.newTag}
+      icon={each.icon}
+    />
+  ))
+
   return (
     <div className="relative">
       <div className="container mx-auto lg:px-0 px-5">
-        {metricsData.map((each: any) => (
-          <Metric
-            key={each.title}
-            flexDirection={each.flexDirection}
-            image={each.image}
-            content={each.content}
-            title={each.title}
-            type={each.type}
-            list={each.list}
-            newTag={each.newTag}
-            icon={each.icon}
-          />
-        ))}
+        {allMetricSections}
       </div>
       <img className="absolute top-0 -z-10" src="/images/gradient-4.png"></img>
       <img

@@ -3,7 +3,7 @@ import React from "react";
 export const Funding = () => {
   return (
     <div className="w-full bg-[#1d252d]">
-      <div className="container mx-auto ">
+      <div className="lg:container mx-auto ">
         <div className="flex items-center justify-center gap-4 text-white py-3">
         <img src="/images/rocket.svg"></img>
         <p className="text-xs lg:text-base">
