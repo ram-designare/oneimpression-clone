@@ -102,7 +102,7 @@ export const Metrics = () => {
       <div className="container mx-auto lg:px-0 px-5">
         {allMetricSections}
       </div>
-      <img className="absolute -top-[600px] -z-10" src="/images/gradient-4.png"></img>
+      <img className="absolute -top-[800px] lg:-top-[600px] -z-10" src="/images/gradient-4.png"></img>
       
     </div>
   );

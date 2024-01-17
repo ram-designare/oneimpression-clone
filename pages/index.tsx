@@ -25,14 +25,8 @@ export const Home = () => {
         <Creators />
         <Metrics />
         <StayOrganised />
-        <div className="relative">
-          <BackedBy />
-          <FeaturedIn />
-          <img
-            src="/images/gradient-6.png"
-            className="absolute -bottom-[300px] left-0 -z-10"
-          ></img>
-        </div>
+        <BackedBy />
+        <FeaturedIn />
         <Join />
         <Footer />
         {/* <ContactForm /> */}

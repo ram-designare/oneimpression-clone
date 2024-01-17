@@ -3,7 +3,6 @@ import { Button } from "../Button/Button";
 import { UserContext } from "@/pages/_app";
 
 const Footer = () => {
-
   const { dialogState, setDialogState } = useContext<any>(UserContext);
 
   const footerPointers = [
@@ -22,7 +21,10 @@ const Footer = () => {
         { name: "Privacy Policy", link: "" },
         { name: "Brand Terms & Condition", link: "" },
         { name: "Influencer Terms & Condition", link: "" },
-        { name: "© 2021 Anycast Technology Pvt. Ltd. All rights reserved.", link: "" },
+        {
+          name: "© 2021 Anycast Technology Pvt. Ltd. All rights reserved.",
+          link: "",
+        },
       ],
     },
     {
@@ -76,9 +78,7 @@ const Footer = () => {
           </div>
 
           <Button
-            onClickFunction={() =>
-              setDialogState({ open: true, type: "form" })
-            }
+            onClickFunction={() => setDialogState({ open: true, type: "form" })}
             bgColor="bg-[#30B8C0] !py-4"
             text="Get Started"
             textColor="white text-sm lg:text-xl font-medium"

@@ -22,7 +22,7 @@ export const BackedBy = () => {
     <div className="lg:container mx-auto lg:px-0 px-5">
       <div className="flex lg:flex-row flex-col lg:gap-12 lg:py-32 py-16 lg:pl-8">
         <div className="flex-1 flex flex-col gap-6">
-          <p className="text-2xl lg:text-5xl">We are backed by leading investors</p>
+          <p className="text-2xl lg:text-5xl font-medium">We are backed by leading investors</p>
           <p className="text-sm lg:text-xl w-3/4">
             Our vision for the creator economy is shared by leading investors
             globally. Our investors include 20+ unicorn founders, social
