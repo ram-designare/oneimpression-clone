@@ -7,7 +7,9 @@ export interface MainLayoutProps {
 }
 
 export const MainLayout: FC<MainLayoutProps> = ({ children }) => (
-  <div>
+  <>
+  <Navbar />
     {children}
-  </div>
+  <Footer />
+  </>
 );

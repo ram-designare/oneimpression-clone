@@ -69,7 +69,7 @@ const Footer = () => {
           <div className="flex lg:flex-row flex-col justify-evenly gap-4 lg:gap-16">
             {footerPointers.map((each: any) => (
               <div key={each.point} className="flex items-center gap-2">
-                <img className="w-5 h-5" src="/images/check.png"></img>
+                <img alt="check-mark-green" className="w-5 h-5" src="/images/check.png"></img>
                 <p className="text-white text-sm lg:text-xl">{each.point}</p>
               </div>
             ))}
@@ -88,7 +88,7 @@ const Footer = () => {
           <div className="grid lg:col-span-2">
             <FooterColumn data={footerLegal} />
             <p className="text-white text-xs lg:text-base md:pr-40 mt-2 lg:mt-3">© 2021 Anycast Technology Pvt. Ltd. All rights reserved.</p>
-            <img className="mt-6 lg:mt-12" src="/images/oi-white-logo.svg"></img>
+            <img alt="white-logo" className="mt-6 lg:mt-12" src="/images/oi-white-logo.svg"></img>
           </div>
           {footerGridElements.map((each: any, i: number) => (
             <FooterColumn key={each.title} data={each} />

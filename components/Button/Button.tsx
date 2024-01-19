@@ -27,7 +27,7 @@ export const Button: FC<MetricProps> = ({
         {text}
       </button>
       {icon && (
-        <img
+        <img alt={`${iconImg}`}
           className="p-0 ml-1 h-3 w-3 sm:ml-4 sm:h-6 sm:w-6"
           src={iconImg}
         ></img>

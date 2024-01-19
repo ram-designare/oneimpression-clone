@@ -13,7 +13,7 @@ export const FeaturedIn = () => {
   ];
 
   const allFeatured = featuredList.map((e, i) => (
-    <img key={i} className="w-24" src={e.image}></img>
+    <img alt={`${i}`} key={i} className="w-24" src={e.image}></img>
   ));
   return (
     <div className="relative">
@@ -27,10 +27,10 @@ export const FeaturedIn = () => {
           </div>
         </div>
       </div>
-      <img
-            src="/images/gradient-6.png"
-            className="absolute -bottom-[300px] lg:-bottom-[500px] left-0 -z-10"
-          ></img>
+      <img alt="gradient-6"
+        src="/images/gradient-6.png"
+        className="absolute -bottom-[300px] lg:-bottom-[500px] left-0 -z-10"
+      ></img>
     </div>
   );
 };

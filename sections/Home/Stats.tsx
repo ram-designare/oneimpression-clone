@@ -42,7 +42,7 @@ export const Stats = () => {
           </div>
         </div>
       </div>
-      <img className="px-5 lg:px-0 lg:max-w-screen-xl mx-auto" src="/images/global-influencer.png"></img>
+      <img alt="global-influencer" className="px-5 lg:px-0 lg:max-w-screen-xl mx-auto" src="/images/global-influencer.png"></img>
     </>
   );
 };

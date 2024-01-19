@@ -81,7 +81,7 @@ export const ContactForm: FC<ContactFormProps> = ({ closeForm }) => {
     >
       <div className="flex flex-col gap-6 px-8 py-6">
         <div className="flex flex-col gap-2 mb-8">
-          <img className="w-[36px]" src="/images/phone.svg"></img>
+          <img alt="phone-icon" className="w-[36px]" src="/images/phone.svg"></img>
           <p className="text-2xl font-bold">Schedule Demo</p>
           <p className="text-xl font-normal">
             Get a campaign proposal within 24 hours

@@ -21,7 +21,7 @@ export const Metric: FC<MetricProps> = ({
   return (
     <div className="flex justify-center items-center pt-6 lg:py-12 lg:gap-20 lg:mt-0 mt-12">
       <div
-        className={`flex gap-28 ${classes || "lg:flex-row gap-28 flex-col-reverse"}`}
+        className={`flex lg:gap-28 ${classes ? "lg:flex-row-reverse flex-col-reverse" : "lg:flex-row flex-col-reverse"}`}
       >
         <div className="flex-1 flex flex-col justify-start lg:pl-12">
           <div className="text-2xl lg:text-5xl font-semibold lg:w-3/4 pt-8 relative">
@@ -29,7 +29,7 @@ export const Metric: FC<MetricProps> = ({
             <span className="relative font-semibold">
               {title}{" "}
               {icon && (
-                <img
+                <img alt={`${icon}`}
                   className="absolute lg:-right-16 -right-10 lg:w-[52px] w-[32px] lg:bottom-4 bottom-2"
                   src={icon}
                 ></img>
@@ -64,7 +64,7 @@ export const Metric: FC<MetricProps> = ({
           )}
         </div>
         <div className="flex-1 lg:pr-10">
-          <img src={image}></img>
+          <img alt={`${image}`} src={image}></img>
         </div>
       </div>
     </div>

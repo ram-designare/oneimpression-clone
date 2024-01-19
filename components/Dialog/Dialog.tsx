@@ -52,7 +52,7 @@ export const Dialog: FC<DialogProps> = ({ children, closeDialog, isOpen }) => {
       >
         <span className="relative">
           {children}
-          <img
+          <img alt="close-form-x-mark"
             className="absolute top-4 right-6 w-8 cursor-pointer"
             src="/images/close-form.svg"
             onClick={closeDialog}

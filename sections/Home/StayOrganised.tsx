@@ -36,7 +36,7 @@ export const StayOrganised = () => {
           </div>
         </div>
       </div>
-      <img
+      <img alt="gradient-5"
         className="absolute bottom-[800px] lg:-bottom-[700px] right-0 -z-10"
         src="/images/gradient-5.png"
       ></img>

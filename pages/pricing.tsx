@@ -4,7 +4,7 @@ export const Pricing = () => {
   return (
     <div className="relative h-full">
       <Link href="/">
-        <img
+        <img alt="white-logo"
           className="absolute left-2 lg:left-10 top-4 lg:top-10 w-24 lg:w-52"
           src="/images/oi-white-logo.svg"
         ></img>

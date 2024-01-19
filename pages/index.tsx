@@ -14,14 +14,12 @@ import { Dialog } from "@/components/Dialog/Dialog";
 import { ContactForm } from "@/components/ContactForm/ContactForm";
 import { Stats } from "@/sections/Home/Stats";
 
-// import { BASE_URL } from "../utils/Constants";
 export const Home = () => {
   const { dialogState, setDialogState } = useContext<any>(UserContext);
 
   return (
     <>
       <MainLayout>
-        <Funding />
         <Hero />
         <Stats />
         <Creators />
@@ -30,8 +28,6 @@ export const Home = () => {
         <BackedBy />
         <FeaturedIn />
         <Join />
-        <Footer />
-        {/* <ContactForm /> */}
       </MainLayout>
       {dialogState.type === "form" && (
         <Dialog

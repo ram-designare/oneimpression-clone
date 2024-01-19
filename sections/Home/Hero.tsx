@@ -24,12 +24,11 @@ export const Hero = () => {
   const { dialogState, setDialogState } = useContext<any>(UserContext);
 
   const allClients = clientList.map((e, i) => (
-    <img key={i} className="w-24" src={e.image}></img>
+    <img alt={`${i}`} key={i} className="w-24" src={e.image}></img>
   ))
   return (
     <div className="relative">
       <div className="lg:container mx-auto lg:px-0 px-5">
-        <Navbar />
         <div className="flex flex-col lg:text-center justify-center gap-4 lg:gap-6 mt-24">
           <p className="text-3xl lg:text-7xl font-semibold bg-gradient-to-r from-[#30c0b7] to-[#706df9] lg:py-2 bg-clip-text text-transparent">
             Start your influencer <br></br> campaign today
@@ -60,7 +59,7 @@ export const Hero = () => {
           {allClients}
         </div>
       </div>
-      <img
+      <img alt="gradient-1"
         className="absolute -top-[232px] left-0 -z-10"
         src="/images/gradient-1.png"
       ></img>

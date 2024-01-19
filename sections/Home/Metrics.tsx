@@ -14,7 +14,7 @@ export const Metrics = () => {
         { point: "10+ Languages supported" },
       ],
       classes: "",
-      newTag: false,
+      tag: false,
     },
     {
       title: "Get premium data with creator insights",
@@ -24,7 +24,7 @@ export const Metrics = () => {
         { point: "Audience Demographics" },
         { point: "Historical Rating" },
       ],
-      classes: "lg:flex-row-reverse flex-col-reverse",
+      classes: true,
       icon: "/images/increase-graph.svg",
     },
     {
@@ -39,7 +39,7 @@ export const Metrics = () => {
       image: "/images/fully_compliant.png",
       content:
         ["Say goodbye to lengthy negotiations and hours spent on legal paperwork. With our Fully Compliant Creator Contracts, you can focus on what matters most — connecting with the right influencers and growing your business."],
-      classes: "lg:flex-row-reverse flex-col-reverse",
+      classes: true,
     },
     {
       title: "Advanced creator briefing system",
@@ -53,7 +53,8 @@ export const Metrics = () => {
       image: "/images/performance.png",
       content:
         ["Track and analyse your campaign performance in real-time. Get deep insights at every level, from creator, content, category, gender and platform. You will exercise unparalleled control over your campaigns, all on a single platform."],
-      classes: "lg:flex-row-reverse flex-col-reverse",
+      classes: true,
+      tag:""
     },
     {
       title: "Multiply ROI via One Ads",
@@ -80,7 +81,7 @@ export const Metrics = () => {
   return (
     <div className="relative">
       <div className="container mx-auto lg:px-0 px-5">{allMetricSections}</div>
-      <img
+      <img alt="gradient-4"
         className="absolute -top-[800px] lg:-top-[600px] right-0 -z-10"
         src="/images/gradient-4.png"
       ></img>
