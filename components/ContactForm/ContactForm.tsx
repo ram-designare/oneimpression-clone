@@ -141,7 +141,7 @@ export const ContactForm: FC<ContactFormProps> = ({ closeForm }) => {
           </p>
         </div>
         <Button
-          onClickFunction={handleSubmit}
+          onClick={handleSubmit}
           text="Request Callback"
           bgColor="bg-[#30B8C0] mx-auto"
           textColor="white"
