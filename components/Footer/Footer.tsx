@@ -91,7 +91,7 @@ const Footer = () => {
             <img className="mt-6 lg:mt-12" src="/images/oi-white-logo.svg"></img>
           </div>
           {footerGridElements.map((each: any, i: number) => (
-            <FooterColumn data={each} />
+            <FooterColumn key={each.title} data={each} />
           ))}
         </div>
       </footer>
