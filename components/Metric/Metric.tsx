@@ -1,37 +1,32 @@
 import React, { FC } from "react";
+import { Pill } from "../Pill/Pill";
 
 export interface MetricProps {
-  flexDirection: string;
+  classes: string;
   image: string;
   title: string;
-  content?: string;
-  type: string;
-  list?: any;
-  newTag?: boolean;
+  content?: any;
+  tag?: boolean;
   icon?: any;
 }
 
 export const Metric: FC<MetricProps> = ({
-  flexDirection,
+  classes,
   image,
   title,
   content,
-  type,
-  list,
-  newTag,
+  tag,
   icon,
 }) => {
   return (
-    <div className="flex justify-center items-center pt-6 lg:py-12">
-      <div className={`flex ${flexDirection}`}>
+    <div className="flex justify-center items-center pt-6 lg:py-12 lg:gap-20 lg:mt-0 mt-12">
+      <div
+        className={`flex gap-28 ${classes || "lg:flex-row gap-28 flex-col-reverse"}`}
+      >
         <div className="flex-1 flex flex-col justify-start lg:pl-12">
           <div className="text-2xl lg:text-5xl font-semibold lg:w-3/4 pt-8 relative">
-            {newTag && (
-              <p className="absolute left-0 top-0 lg:-top-2 text-white font-light text-sm lg:text-base px-2 py-1 rounded-lg bg-[#FF9A23]">
-                New
-              </p>
-            )}
-            <span className="relative">
+            {tag && <Pill text="New" color="#FF9A23" />}
+            <span className="relative font-semibold">
               {title}{" "}
               {icon && (
                 <img
@@ -41,14 +36,14 @@ export const Metric: FC<MetricProps> = ({
               )}
             </span>
           </div>
-          {type == "para" && (
-            <div className="flex flex-col gap-2 text-sm lg:text-lg pt-4 w-full lg:w-full">
+          {content.length <= 1 && (
+            <div className="flex flex-col gap-2 text-sm lg:text-lg pt-4 w-full lg:w-full font-medium">
               {content}
             </div>
           )}
-          {type == "list" && (
+          {content.length > 1 && (
             <div className="flex flex-col gap-2 pt-8">
-              {list.map((each: any) => (
+              {content.map((each: any) => (
                 <div className="flex items-center gap-2" key={each.point}>
                   <svg
                     viewBox="0 0 18 14"
@@ -62,7 +57,7 @@ export const Metric: FC<MetricProps> = ({
                       stroke="#21C17A"
                     ></path>
                   </svg>
-                  <p className="text-sm lg:text-lg">{each.point}</p>
+                  <p className="text-sm lg:text-lg font-medium">{each.point}</p>
                 </div>
               ))}
             </div>

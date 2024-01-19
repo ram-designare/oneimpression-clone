@@ -12,6 +12,7 @@ import { Funding } from "@/components/Navbar/Funding";
 import { UserContext } from "./_app";
 import { Dialog } from "@/components/Dialog/Dialog";
 import { ContactForm } from "@/components/ContactForm/ContactForm";
+import { Stats } from "@/sections/Home/Stats";
 
 // import { BASE_URL } from "../utils/Constants";
 export const Home = () => {
@@ -22,6 +23,7 @@ export const Home = () => {
       <MainLayout>
         <Funding />
         <Hero />
+        <Stats />
         <Creators />
         <Metrics />
         <StayOrganised />

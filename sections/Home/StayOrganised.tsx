@@ -31,13 +31,13 @@ export const StayOrganised = () => {
             You can take a break from the following
           </p>
 
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-y-12 xl:mx-32 lg:mt-20 mt-6">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-y-6 lg:gap-y-12 xl:mx-32 lg:mt-20 mt-6">
             {allBReakPoints}
           </div>
         </div>
       </div>
       <img
-        className="absolute bottom-[800px] lg:-bottom-[700px] -z-10"
+        className="absolute bottom-[800px] lg:-bottom-[700px] right-0 -z-10"
         src="/images/gradient-5.png"
       ></img>
     </div>

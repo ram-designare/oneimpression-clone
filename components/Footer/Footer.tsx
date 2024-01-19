@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Button } from "../Button/Button";
 import { UserContext } from "@/pages/_app";
+import { FooterColumn } from "./FooterColumn";
 
 const Footer = () => {
   const { dialogState, setDialogState } = useContext<any>(UserContext);
@@ -12,21 +13,18 @@ const Footer = () => {
     { point: "Realtime Analytics" },
   ];
 
+  const footerLegal = {
+    title: "LEGAL",
+    points: [
+      { name: "Talk to us", link: "" },
+      { name: "Terms of Service", link: "" },
+      { name: "Privacy Policy", link: "" },
+      { name: "Brand Terms & Condition", link: "" },
+      { name: "Influencer Terms & Condition", link: "" },
+    ],
+  };
+
   const footerGridElements = [
-    {
-      title: "LEGAL",
-      points: [
-        { name: "Talk to us", link: "" },
-        { name: "Terms of Service", link: "" },
-        { name: "Privacy Policy", link: "" },
-        { name: "Brand Terms & Condition", link: "" },
-        { name: "Influencer Terms & Condition", link: "" },
-        {
-          name: "© 2021 Anycast Technology Pvt. Ltd. All rights reserved.",
-          link: "",
-        },
-      ],
-    },
     {
       title: "FEATURES",
       points: [
@@ -62,13 +60,13 @@ const Footer = () => {
     },
   ];
   return (
-    <div className="bg-[#1D252D]">
-      <div className="lg:container mx-auto py-12 lg:py-24 lg:px-0 px-5">
-        <div className="flex flex-col lg:items-center gap-8">
+    <div className="bg-[#1D252D] py-12 lg:py-24 lg:px-52 px-5">
+      <footer className="max-w-screen-xl mx-auto">
+        <div className="flex flex-col lg:items-center gap-8 ">
           <p className="text-4xl lg:text-7xl text-white font-semibold">
             Start a Campaign Now
           </p>
-          <div className="flex lg:flex-row flex-col justify-around gap-4 lg:gap-12">
+          <div className="flex lg:flex-row flex-col justify-evenly gap-4 lg:gap-16">
             {footerPointers.map((each: any) => (
               <div key={each.point} className="flex items-center gap-2">
                 <img className="w-5 h-5" src="/images/check.png"></img>
@@ -78,7 +76,7 @@ const Footer = () => {
           </div>
 
           <Button
-            onClickFunction={() => setDialogState({ open: true, type: "form" })}
+            onClick={() => setDialogState({ open: true, type: "form" })}
             bgColor="bg-[#30B8C0] !py-4"
             text="Get Started"
             textColor="white text-sm lg:text-xl font-medium"
@@ -86,19 +84,17 @@ const Footer = () => {
           ></Button>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-16 lg:place-items-center mt-12">
-          {footerGridElements.map((each: any) => (
-            <div className="flex flex-col" key={Math.random()}>
-              <p className="text-[#747D84] text-sm">{each.title}</p>
-              <div className="flex flex-col gap-2 lg:gap-4 text-white text-xs md:text-normal lg:text-base">
-                {each.points.map((point: any) => (
-                  <p key={point.name}>{point.name}</p>
-                ))}
-              </div>
-            </div>
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-y-16 lg:place-items-start mt-24">
+          <div className="grid lg:col-span-2">
+            <FooterColumn data={footerLegal} />
+            <p className="text-white text-xs lg:text-base md:pr-40 mt-2 lg:mt-3">© 2021 Anycast Technology Pvt. Ltd. All rights reserved.</p>
+            <img className="mt-6 lg:mt-12" src="/images/oi-white-logo.svg"></img>
+          </div>
+          {footerGridElements.map((each: any, i: number) => (
+            <FooterColumn data={each} />
           ))}
         </div>
-      </div>
+      </footer>
     </div>
   );
 };

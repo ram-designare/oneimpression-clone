@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar/Navbar";
 import React, { useContext } from "react";
-import { Stats } from "./Stats";
 import { Button } from "@/components/Button/Button";
 import { UserContext } from "@/pages/_app";
 
@@ -41,7 +40,7 @@ export const Hero = () => {
           </p>
           <div className="flex lg:flex-row flex-col justify-center gap-4 lg:pt-4">
             <Button
-              onClickFunction={() =>
+              onClick={() =>
                 setDialogState({ open: true, type: "form" })
               }
               text="Schedule Demo"
@@ -60,11 +59,9 @@ export const Hero = () => {
         <div className="grid xl:grid-cols-7 lg:grid-cols-5 md:grid-cols-4 grid-cols-5 sm:grid-cols-3 gap-x-4 lg:gap-x-10 gap-y-8 lg:gap-y-16 mt-20 mb-10 place-items-center">
           {allClients}
         </div>
-        <Stats />
-        <img src="/images/global-influencer.png"></img>
       </div>
       <img
-        className="absolute top-0 left-0 -z-10"
+        className="absolute -top-[232px] left-0 -z-10"
         src="/images/gradient-1.png"
       ></img>
     </div>

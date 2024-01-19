@@ -7,7 +7,7 @@ export interface MetricProps {
   iconImg?: string;
   textColor: string;
   width?: string;
-  onClickFunction?: () => unknown;
+  onClick?: () => unknown;
 }
 
 export const Button: FC<MetricProps> = ({
@@ -17,7 +17,7 @@ export const Button: FC<MetricProps> = ({
   iconImg,
   textColor,
   width,
-  onClickFunction
+  onClick : onClickFunction
 }) => {
   return (
     <div onClick={(onClickFunction)}

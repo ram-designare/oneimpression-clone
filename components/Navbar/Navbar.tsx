@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Button } from "../Button/Button";
 import gsap from "gsap";
 import { UserContext } from "@/pages/_app";
+import Link from "next/link";
 
 const Navbar = () => {
   const { dialogState, setDialogState } = useContext<any>(UserContext);
@@ -9,7 +10,7 @@ const Navbar = () => {
   const [viewMenu, setViewMenu] = useState("");
 
   var tlForm = gsap.timeline({ repeat: 0, repeatDelay: 0 });
-  var tlDuration = 0.4;
+  var tlDuration = 0.6;
 
   useEffect(() => {
     // disabling scrollbar when the dialog box is open
@@ -23,38 +24,66 @@ const Navbar = () => {
         .fromTo(
           ".navMenu",
           { x: 384 },
-          { x: 0, duration: tlDuration, ease: "power1.out" },
+          { x: 0, duration: tlDuration, ease: "power1.inOut" },
           "<"
         );
     } else if (viewMenu === "closeMenu") {
       tlForm
-        .fromTo(".navMenu", { x: 0 }, { x: 384, duration: tlDuration })
+        .fromTo(
+          ".navMenu",
+          { x: 0 },
+          { x: 384, duration: tlDuration, ease: "power1.inOut" }
+        )
         .to(".navMenu", { visibility: "hidden", duration: 0 }, "<+=0.4");
     }
   }, [viewMenu]);
 
-
   return (
     <>
       <div className="py-4 flex justify-between relative">
-        <div>
-          <img className="w-[250px]" src="/images/one-logo.png"></img>
-        </div>
-        <div className="hidden lg:flex gap-10 items-center">
-          <p className="relative">
-            We&apos;re hiring
+        <Link href="/">
+          <div>
             <img
-              className="absolute w-4 -right-3 -top-1"
-              src="/images/hiring.png"
+              className="w-[250px] cursor-pointer"
+              src="/images/one-logo.png"
             ></img>
-          </p>
+          </div>
+        </Link>
+        <div className="hidden lg:flex gap-10 items-center">
+          <Link
+            target="_blank"
+            href="https://jobs.lever.co/oneimpression"
+            rel="noopener noreferrer"
+          >
+            <p className="relative cursor-pointer">
+              We&apos;re hiring
+              <img
+                className="absolute w-4 -right-3 -top-1"
+                src="/images/hiring.png"
+              ></img>
+            </p>
+          </Link>
 
-          <p>Sign up as a creator</p>
-          <p>Pricing</p>
-          <p>Login</p>
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScJm-gxPRURNWN_3pb9bdTaAWS17JfsqJ2acKnAyCxEtffFwg/viewform"
+          >
+            <p className="cursor-pointer">Sign up as a creator</p>
+          </Link>
+          <Link href={"/pricing"}>
+            <p className="cursor-pointer">Pricing</p>
+          </Link>
+          <Link
+            href={"https://dashboard.oneimpression.io/"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p className="cursor-pointer">Login</p>
+          </Link>
 
           <Button
-            onClickFunction={() => setDialogState({ open: true, type: "form" })}
+            onClick={() => setDialogState({ open: true, type: "form" })}
             bgColor="bg-[#26A69A]"
             text="Contact Sales"
             textColor="white"
@@ -73,19 +102,44 @@ const Navbar = () => {
         <>
           <div className="w-96 h-screen fixed top-0 right-0 bg-white navMenu">
             <div className="flex flex-col gap-2 pl-6 pt-12 relative">
-              <p className="relative">
-                We&apos;re hiring
-                <img
-                  className="absolute w-4 left-20 bottom-3"
-                  src="/images/hiring.png"
-                ></img>
+              <Link
+                target="_blank"
+                href="https://jobs.lever.co/oneimpression"
+                rel="noopener noreferrer"
+              >
+                <p className="relative">
+                  We&apos;re hiring
+                  <img
+                    className="absolute w-4 left-20 bottom-3"
+                    src="/images/hiring.png"
+                  ></img>
+                </p>
+              </Link>
+
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://docs.google.com/forms/d/e/1FAIpQLScJm-gxPRURNWN_3pb9bdTaAWS17JfsqJ2acKnAyCxEtffFwg/viewform"
+              >
+                <p>Sign up as a creator</p>
+              </Link>
+              <Link href={"/pricing"}>
+                <p>Pricing</p>
+              </Link>
+              <Link
+                href={"https://dashboard.oneimpression.io/"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p>Login</p>
+              </Link>
+
+              <p
+                className="text-[#10B981]"
+                onClick={() => setDialogState({ open: true, type: "form" })}
+              >
+                Contact Sales
               </p>
-
-              <p>Sign up as a creator</p>
-              <p>Pricing</p>
-              <p>Login</p>
-
-              <p className="text-[#10B981]" onClick={() => setDialogState({ open: true, type: "form" })}>Contact Sales</p>
               <img
                 onClick={() => setViewMenu("closeMenu")}
                 className="absolute right-6 top-6 w-[12px]"
